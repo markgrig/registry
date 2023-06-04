@@ -64,4 +64,14 @@ export default {
     text-decoration: underline;
 
   }
+
+  @media (max-width: 700px) {
+    .org, .org-name, .sidebar-date {
+      width: 100vw;
+    }
+
+    .sidebar-date div {
+      text-align: center;
+    }
+  }
 </style>

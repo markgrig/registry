@@ -72,4 +72,10 @@ export default {
     margin: 1rem;
   }
 
+  @media (max-width: 700px) {
+    .table-el {
+      min-width: 200px;
+    }
+  }
+
 </style>
