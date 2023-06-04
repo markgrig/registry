@@ -1,2 +1,2 @@
 <h2 align = "center" > Диплой на github page: </h2>
-<h3 align = "center" > https://markgrig.github.io/registry/](https://markgrig.github.io/registry/frontend/dist/ </h3>
+<h3 align = "center" > https://markgrig.github.io/registry/frontend/dist/ </h3>
