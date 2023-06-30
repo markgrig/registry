@@ -7,7 +7,8 @@
   <div class = "registry-cols">
     <div
       v-for="el, i in nameCols" :key="i"
-      class = "table-el">
+      class = "table-el"
+      :style = "elStyle">
         {{  el  }}
     </div>
   </div>
@@ -17,11 +18,15 @@
     v-for="el, i in items" :key="i">
     <div class = "registry-rows">
       <div
-      v-for="value, i in nameCols" :key="i">
+      v-for="value, j in nameCols" :key="j">
 
         <div
-          class = "table-el">
-          {{ el[value] }}
+          :class = "`table-el --el-${j}`"
+          :style = "elStyle">
+          <div
+            class = "text-table-el">
+            {{ el[value] }}
+          </div>
         </div>
       </div>
     </div>
@@ -45,6 +50,11 @@ export default {
       } else {
         return []
       }
+    },
+    elStyle() {
+      return {
+        width : `${95/this.nameCols.length}vw`
+      }
     }
   }
 }
@@ -60,10 +70,38 @@ export default {
   .table-el {
     background-color: white;
     box-sizing: border-box;
-    width: 25vw;
     padding: 10px;
     height: 100%;
     border: 1px solid black;
+  }
+
+  .--el-0 {
+    font-size: 18px;
+  }
+
+  .--el-1 {
+    font-size: 22px;
+  }
+
+  .--el-2 {
+    font-size: 24px;
+    font-style: italic;
+  }
+
+  .table-el:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+  }
+
+  .text-table-el {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .registry-cols {
+    height: 100px;
   }
 
   .reg-name {
